@@ -52,7 +52,7 @@ const getOneTour = (req, res) => {
   });
 };
 
-const creatTour = (req, res) => {
+const createTour = (req, res) => {
   const newId = tours[tours.length - 1].id + 1;
   const newTour = Object.assign({ id: newId }, req.body);
 
@@ -102,13 +102,51 @@ const deleteTour = (req, res) => {
   });
 };
 
+const getAllUsers = (req, res) => {
+  res.status(500).json({
+    status: 'Error',
+    message: 'This Route is Not Yet Defined',
+  });
+};
+const createUsers = (req, res) => {
+  res.status(500).json({
+    status: 'Error',
+    message: 'This Route is Not Yet Defined',
+  });
+};
+const getOneUser = (req, res) => {
+  res.status(500).json({
+    status: 'Error',
+    message: 'This Route is Not Yet Defined',
+  });
+};
+const updateUser = (req, res) => {
+  res.status(500).json({
+    status: 'Error',
+    message: 'This Route is Not Yet Defined',
+  });
+};
+const deleteUser = (req, res) => {
+  res.status(500).json({
+    status: 'Error',
+    message: 'This Route is Not Yet Defined',
+  });
+};
+
 // ROUTES ===========================
-app.route('/api/v1/tours').get(getAllTours).post(creatTour);
+app.route('/api/v1/tours').get(getAllTours).post(createTour);
 app
   .route('/api/v1/tours/:id')
   .get(getOneTour)
   .patch(updateTour)
   .delete(deleteTour);
+
+app.route('/api/v1/users').get(getAllUsers).post(createUsers);
+app
+  .route('/api/v1/users/:id')
+  .get(getOneUser)
+  .patch(updateUser)
+  .delete(deleteUser);
 
 // ------------------------------
 const PORT = 8000;
